@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
 const TaskForm = ({ addTask }) => {
+  //state for input value
   const [taskInput, setTaskInput] = useState("");
 
   const handleAddTask = () => {
     addTask(taskInput);
-    console.log("task is :",taskInput);
+    console.log("task is :", taskInput);
     setTaskInput("");
   };
 
