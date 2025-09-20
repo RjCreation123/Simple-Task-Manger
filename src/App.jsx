@@ -10,11 +10,17 @@ const App = () => {
     setTasks([...tasks, task]);
   };
 
+  const deleteTask = (taskIndex) => {
+    //instead of item we can simply pass the "_"(underscore) cz filter accept 2 arguments
+    const updatedTasks = tasks.filter((item, index) => index != taskIndex);
+    setTasks(updatedTasks);
+  };
+
   return (
     <div style={{ backgroundColor: "gray" }}>
       <TaskForm addTask={addNewTask} />
 
-      <TaskList tasks={tasks} />
+      <TaskList tasks={tasks} deleteTask={deleteTask} />
     </div>
   );
 };

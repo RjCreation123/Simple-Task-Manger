@@ -1,7 +1,7 @@
 import React from "react";
 import TaskItem from "./TaskItem";
 
-const TaskList = ({ tasks }) => {
+const TaskList = ({ tasks, deleteTask }) => {
   return (
     <div
       style={{
@@ -25,7 +25,12 @@ const TaskList = ({ tasks }) => {
         </thead>
         <tbody>
           {tasks.map((task, index) => (
-            <TaskItem key={index} task={task} index={index} />
+            <TaskItem
+              key={index}
+              task={task}
+              index={index}
+              deleteTask={deleteTask}
+            />
           ))}
         </tbody>
       </table>
